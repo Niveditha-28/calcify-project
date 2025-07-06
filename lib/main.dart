@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'views/home_page.dart';
 
+import 'dart:async';
+
 void main() {
-  runApp(calcify_app());
+  runZonedGuarded(() {
+    runApp(calcify_app());
+  }, (error, stack) {
+    print('Caught Zone Error: $error');
+  });
 }
+
 
 class calcify_app extends StatelessWidget {
   @override
@@ -14,3 +21,4 @@ class calcify_app extends StatelessWidget {
     );
   }
 }
+

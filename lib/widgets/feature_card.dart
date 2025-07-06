@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/feature_model.dart';
 import '../views/calculate_area_page.dart'; // ✅ Adjust path if needed
 import '../views/calculate_volume_page.dart'; // Adjust path if necessary
-
+import '../views/bmi_page.dart';
 
 class FeatureCard extends StatelessWidget {
   final FeatureModel feature;
@@ -24,7 +24,12 @@ class FeatureCard extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (_) => const CalculateVolumePage()),
           );
-        }
+        } else if (feature.navigation == "BMI Calculator") {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const BmiPage()),
+          );
+        } 
       },
       child: Container(
         width: 140,
